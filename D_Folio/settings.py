@@ -27,9 +27,9 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 SECRET_KEY = 'abz(q8(d7h&#v)w6r@#2y-p%d3b%f9ehtux!h&ia8)n-r90a_*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://d-folio.herokuapp.com']
 
 
 # Application definition
