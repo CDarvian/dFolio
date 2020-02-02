@@ -1,5 +1,5 @@
 # dFolio
-- Version - 2.6
+- Version - 1.7
 
 - System requirements - Python 3.0 or later, WSGI Compatibility
 - Author - DarvianOne
