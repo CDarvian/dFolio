@@ -1,0 +1,61 @@
+.gradient {
+  background: linear-gradient(120deg,#76b1db, #93bdc9);
+  color: #fff;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.icon-header {
+  margin-right: 4px;
+}
+
+@media (max-width: 768px) {
+  .md-center {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .md-center {
+    margin-left: 0;
+  }
+}
+
+.portfolio-block.projects-cards a:hover {
+  color: #76b1db;
+  transition: 300ms;
+}
+
+.copyright a {
+  display: inline;
+  font-weight: 500;
+  font-size: 16px;
+  color: gray !important;
+}
+
+.copyright a:hover {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.copyright i {
+  margin-right: 5px;
+}
+
+.copyright {
+  color: gray;
+  display: inline-block;
+}
+
+.copyright:hover {
+  color: black;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.meta-heading {
+  margin-top: 10%;
+}
+

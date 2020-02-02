@@ -1,1 +1,1 @@
-web: gunicorn D_Folio.wsgi
+web: gunicorn D_Folio.wsgi --log-file -
