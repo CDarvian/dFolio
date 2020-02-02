@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+	<main class="page hire-me-page">
+
+        <section class="portfolio-block hire-me">
+
+            <div class="container">
+
+                <div class="heading">
+
+                    <h2>Контакты</h2>
+                </div>
+
+                <div class="text-center">
+
+                    <form data-aos="fade" data-aos-duration="400" data-aos-delay="250" data-aos-once="true">
+
+                        <h3 style="margin-bottom: 10%">Запрос отправлен!</h3>
+
+                        <a href="{% url 'contacts:index' %}" class="btn btn-primary btn-md">Вернуться</a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}

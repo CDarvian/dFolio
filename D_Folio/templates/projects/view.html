@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{prj.project_name}}{% endblock %}
+
+{% block content %}
+	<main class="page project-page">
+
+        <section class="portfolio-block project">
+
+            <div class="container">
+
+                <div class="heading">
+
+                    <h2>{{prj.project_name}}</h2>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="550" data-aos-once="true" class="image" style="background-image:url(&quot;{{prj.project_cover}}&quot;);"></div>
+
+                <div class="row">
+
+                    <div class="col-12 col-md-6 offset-md-1 info" data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="200" data-aos-once="true">
+
+                        <h3>Описание</h3>
+
+                        <pre>{{prj.project_description}}</pre>
+                    </div>
+
+                    <div class="col-12 col-md-3 offset-md-1 meta" data-aos="zoom-out-up" data-aos-duration="700" data-aos-delay="400" data-aos-once="true">
+
+                        <div class="tags">
+                            <span class="meta-heading">Дата создания</span>
+                            <span>{{prj.start_date}}</span>
+
+                            <span class="meta-heading">Дата окончания</span>
+                            <span>{{prj.end_date}}</span>
+                            <span class="meta-heading">Использованные технологии</span>
+
+                            {% for name, link in tch.items %}
+                            	<span><a href="{{link}}">- {{name}}</a></span>
+                            {% endfor %}
+
+                            {% if prj.repo_link %}
+                            	<span class="meta-heading">Исходный код</span>
+                            	<span><a href="{{prj.repo_link}}" class="btn btn-primary btn-sm"><i class="fab fa-github" style="color: white"></i></a></span>
+                            {% endif %}
+
+                            <span class="meta-heading">Статус</span>
+							<span>{{p_status}}</span>
+
+                            <span class="meta-heading"><a href="{{prj.view_link}}" class="btn btn-primary btn-md"  style="color: white">Результат</a></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="more-projects">
+
+                    <h3 class="text-center">Последние проекты</h3>
+
+                    <div class="row gallery">
+
+                        <div class="col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100" data-aos-once="true">
+
+                            <div class="item">
+
+                                <a href="projects/{{last_prj.0.id}}"><img class="img-fluid scale-on-hover" src="{{last_prj.0.project_cover}}"></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200" data-aos-once="true">
+                            
+                            <div class="item">
+
+                                <a href="projects/{{last_prj.1.id}}"><img class="img-fluid scale-on-hover" src="last_prj.1.project_cover"></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-aos-once="true">
+                            
+                            <div class="item">
+
+                                <a href="projects/{{last_prj.2.id}}"><img class="img-fluid scale-on-hover" src="last_prj.2.project_cover"></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-aos-once="true">
+                            
+                            <div class="item">
+
+                                <a href="projects/{{last_prj.3.id}}"><img class="img-fluid scale-on-hover" src="last_prj.3.project_cover"></a>
+                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}

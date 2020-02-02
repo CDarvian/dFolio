@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+	<main class="page lanidng-page">
+
+        <section class="portfolio-block block-intro">
+
+            <div class="container">
+
+                <div class="avatar" style="background-image:url(&quot;{% static 'assets/img/Avatar.jpg' %}&quot;);"></div>
+
+                <div class="about-me">
+
+                    <p>Привет! Я Даниил Губин. Я занимаюсь разработкой сайтов и приложений. У меня есть опыт в создании чат-ботов, небольших программ под Windows, а также приложений на Android...</p>
+
+                    <a class="btn btn-primary btn-md" href="{% url 'about-me:index' %}">Подробнее</a></div>
+            </div>
+
+        </section>
+
+        <section class="portfolio-block photography">
+
+            <div class="container">
+
+                <div class="row no-gutters">
+
+                    {% for prj in last_prj %}
+                        <div class="col-md-6 col-lg-4 item main-page-last-works zoom-on-hover">
+
+                            <a href="{% url 'projects:detail' prj.id %}"><img class="img-fluid image" src="{{prj.project_cover}}"></a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+            
+        </section>
+
+        <section class="portfolio-block call-to-action border-bottom">
+
+            <div class="container">
+
+                <div class="d-flex justify-content-center align-items-center content">
+
+                    <h3>Нравится то, что видишь?</h3><a class="btn btn-outline-primary btn-lg" href="{% url 'contacts:index' %}">Контакты</a></div>
+            </div>
+
+        </section>
+
+        <section class="portfolio-block skills">
+
+            <div class="container">
+
+                <div class="heading">
+
+                    <h2>Навыки</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="card special-skill-item border-0" data-aos="zoom-in" data-aos-duration="800" data-aos-once="true">
+
+                            <div class="card-header bg-transparent border-0"><i class="{{main_skills.0.skill_icon_class}}"></i></div>
+
+                            <div class="card-body">
+
+                                <h3 class="card-title">{{main_skills.0.skill_name}}</h3>
+
+                                <p class="card-text">{{main_skills.0.skill_description}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card special-skill-item border-0" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="150" data-aos-once="true">
+
+                            <div class="card-header bg-transparent border-0"><i class="{{main_skills.1.skill_icon_class}}"></i></div>
+
+                            <div class="card-body">
+
+                                <h3 class="card-title">{{main_skills.1.skill_name}}</h3>
+
+                                <p class="card-text">{{main_skills.1.skill_description}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card special-skill-item border-0" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300" data-aos-once="true">
+
+                            <div class="card-header bg-transparent border-0"><i class="{{main_skills.2.skill_icon_class}}"></i></div>
+
+                            <div class="card-body">
+
+                                <h3 class="card-title">{{main_skills.2.skill_name}}</h3>
+
+                                <p class="card-text">{{main_skills.2.skill_description}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <section class="portfolio-block website gradient">
+
+        <div class="container" data-aos="zoom-out" data-aos-duration="650" data-aos-once="true">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-12 col-lg-5 offset-lg-1 text">
+
+                    <h3>{{laptop_block.0.block_name}}</h3>
+
+                    <p>{{laptop_block.0.block_description}}</p>
+                </div>
+
+                <div class="col-md-12 col-lg-5">
+
+                    <div class="portfolio-laptop-mockup">
+
+                        <div class="screen">
+
+                            <div class="screen-content" style="background-image:url(&quot;{{laptop_block.0.laptop_image}}&quot;);"></div>
+                        </div>
+
+                        <div class="keyboard"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+{% endblock %}

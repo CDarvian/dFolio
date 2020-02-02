@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Проекты{% endblock %}
+
+{% block content %}
+	<main class="page projects-page">
+
+        <section class="portfolio-block projects-cards">
+
+            <div class="container">
+
+                <div class="heading">
+
+                    <h2>Мои проекты</h2>
+                </div>
+
+                <div class="row">
+
+                	{% for p in projects %}
+                		<div class="col-md-6 col-lg-4">
+
+                        	<div class="card border-0" data-aos="fade-down" data-aos-delay="50" data-aos-once="true">
+
+                            	<a href="{% url 'projects:detail' project_id=p.id %}"><img class="card-img-top scale-on-hover" src="{{p.project_cover}}" alt="Project Image"></a>
+
+                            	<div class="card-body">
+
+                                	<h6><a href="{% url 'projects:detail' project_id=p.id %}">{{p.project_name}}</a></h6>
+
+                                	<p class="text-muted card-text">{{p.project_short_description}}</p>
+                            	</div>
+
+                        	</div>
+
+                    	</div>
+                	{% endfor %}   
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}

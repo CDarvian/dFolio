@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Обо мне{% endblock %}
+
+{% block content %}
+	<main class="page cv-page">
+
+        <section class="portfolio-block block-intro border-bottom">
+
+            <div class="container">
+
+                <div class="avatar" style="background-image:url(&quot;{% static 'assets/img/Avatar.jpg' %}&quot;);"></div>
+            </div>
+
+        </section>
+
+        <section class="portfolio-block cv">
+
+            <div class="container">
+
+                <div class="work-experience group">
+
+                    <div class="heading">
+
+                        <h2 class="text-center">Опыт работы</h2>
+                    </div>
+
+                    {% for w in works %}
+	                    <div data-aos="fade-up" data-aos-delay="450" data-aos-once="true" class="item">
+
+	                        <div class="row">
+
+	                            <div class="col-md-6">
+
+	                                <h3>{{w.work_place}}</h3>
+
+	                                <h4 class="organization">{{w.work_company}}</h4>
+	                            </div>
+
+	                            <div class="col-md-6"><span class="period">{{w.work_period}}</span></div>
+	                        </div>
+
+	                        <p class="text-muted">{{w.work_description}}</p>
+	                    </div>
+	                {% endfor %}
+
+                </div>
+
+                <div class="education group">
+
+                    <div class="heading">
+
+                        <h2 class="text-center">Образование</h2>
+                    </div>
+
+                    {% for edu in educations %}
+	                    <div data-aos="fade-up" data-aos-duration="450" data-aos-delay="100" data-aos-once="true" class="item">
+	                        
+	                        <div class="row">
+
+	                            <div class="col-md-6">
+	                                
+	                                <h3>{{edu.edu_name}}</h3>
+	                                
+	                                <h4 class="organization">{{edu.edu_place}}</h4>
+	                            </div>
+
+	                            <div class="col-6"><span class="period">{{edu.edu_period}}</span></div>
+	                        </div>
+
+	                        <p class="text-muted">{{edu.edu_description}}
+	                        	<br>
+	                        </p>
+
+	                    </div>
+	                {% endfor %}
+
+                </div>
+                <div class="group">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div data-aos="zoom-out" data-aos-duration="500" data-aos-delay="200" data-aos-once="true" class="skills portfolio-info-card">
+
+                                <h2>Уровень навыков</h2>
+
+                                {% for t in tools %}
+									<h3>{{t.tool_name}}</h3>
+
+                                	<div class="progress">
+
+                                    	<div class="progress-bar" aria-valuenow="{{t.tool_level}}" aria-valuemin="0" aria-valuemax="100" style="width: {{t.tool_level}}%;"><span class="sr-only">{{t.tool_level}}%</span></div>
+                                	</div>
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div data-aos="zoom-out" data-aos-duration="500" data-aos-delay="200" data-aos-once="true" class="contact-info portfolio-info-card">
+
+                                <h2>Доп. Информация</h2>
+
+                                <div class="row">
+
+                                    <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                                    <div class="col-9"><span>Родился: 31-03-2006</span></div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Псевдоним: DarvianOne</span></div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-1"><i class="icon ion-speedometer icon"></i></div>
+                                    <div class="col-9"><span>Создано проектов: Comming soon...</span></div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-1"><i class="icon ion-android-time icon"></i></div>
+                                    <div class="col-9"><span>Проектов в процессе: Comming soon...</span></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hobbies group">
+
+                    <div class="heading">
+
+                        <h2 class="text-center">{{bottom_block.0.block_name}}</h2>
+                    </div>
+
+                    <p class="text-center text-muted" data-aos="flip-up" data-aos-duration="400" data-aos-delay="250" data-aos-once="true">{{bottom_block.0.block_description}}</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <title>{% block title %}{% endblock %} - D. Folio</title>
+
+    <link rel="shortcut icon" href="{% static 'assets/img/Icon.ico' %}">
+
+    <!-- Connecting stylesheets -->
+
+    <!-- Connecting Bootstrap -->
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Connecting Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- Connecting Icon Fonts -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+
+    <!-- Connecting Animations Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+
+    <!-- Connecting Custom Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+
+        <div class="container"><a class="navbar-brand logo" href="{% url 'index:index' %}"><strong>D. Folio</strong></a>
+
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="nav navbar-nav ml-auto">
+
+                    <li class="nav-item" role="presentation">
+
+                        <a class="nav-link" href="{% url 'about-me:index' %}">
+
+                            <i class="far fa-user icon-header"></i>
+
+                            Обо мне
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+
+                        <a class="nav-link" href="{% url 'projects:index' %}">
+
+                            <i class="fas fa-sitemap icon-header"></i>
+
+                            Проекты
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+
+                        <a class="nav-link" href="{% url 'contacts:index' %}">
+
+                            <i class="fas fa-comment-dots icon-header"></i>
+
+                            Контакты
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    {% block content %}Контент ушел на пенсию...{% endblock %}
+
+    <footer class="page-footer">
+
+        <div class="container">
+
+            <div class="links">
+
+            	<a href="{% url 'about-me:index' %}">Обо мне</a>
+
+            	<a href="{% url 'projects:index' %}">Проекты</a>
+
+            	<a href="{% url 'contacts:index' %}">Контакты</a>
+            </div>
+
+            <div class="social-icons">
+
+            	<a href="https://vk.com/gubin_daniil">
+
+            		<i class="fab fa-vk"></i>
+            	</a>
+
+            	<a href="https://github.com/darvianone">
+
+            		<i class="fab fa-github"></i>
+            	</a>
+
+            	<a href="https://telete.in/darvian">
+
+            		<i class="fab fa-telegram-plane"></i>
+            	</a>
+            </div>
+
+            <div class="copyright">
+
+                <i class="fa fa-copyright"></i>
+                <a href="{% url 'admin:index' %}">D. Folio - 2020</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Connecting Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+</body>
+
+</html>
